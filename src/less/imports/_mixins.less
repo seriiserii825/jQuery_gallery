@@ -1,0 +1,26 @@
+// main: style.less
+
+.box-sizing() {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.transition(@prop) {
+    -webkit-transition: @prop;
+    -moz-transition: @prop;
+    transition: @prop;
+}
+
+.clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        width: 100%;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
