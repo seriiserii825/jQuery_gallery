@@ -6,7 +6,7 @@ $(function() {
         $(this).addClass('active');
         $('ul, body').animate({
             scrollTop: scrollElem - 100
-        }, 6000);
+        }, 1000);
     });
 
     /*document on scroll

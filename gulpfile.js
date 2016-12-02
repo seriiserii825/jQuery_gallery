@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     spriteCreator = require('gulp.spritesmith'),
     notify = require("gulp-notify"),
+    uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync').create();
 
@@ -38,6 +39,7 @@ gulp.task('html', function() {
 });
 gulp.task('js', function(){
     gulp.src('src/js/*')
+    .pipe(uglify())
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });
@@ -95,6 +97,6 @@ gulp.task('watch', function() {
 
 
 //     // Serve files from the root of this project
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['build','browser-sync', 'watch']);
 //     // add browserSync.reload to the tasks array to make
 //     // all browsers reload after tasks are complete.
